@@ -1,0 +1,10 @@
+<h3>All Journals</h3>
+<%= link_to 'New Journal', new_journal_path %>
+<br>
+
+<% @journals.each do |journal| %>
+  <%= journal.content %>
+  <%= journal.date %>
+  <%= link_to 'Edit', edit_journal_path(journal) %>
+  <%= link_to 'Delete', journal_path(journal), data: { 'turbo-method': :delete } %>
+<% end %>

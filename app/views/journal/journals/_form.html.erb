@@ -1,0 +1,17 @@
+<% if @journal.errors.present? %>
+  <p>
+    <% @journal.errors.full_messages.each do |e| %>
+      <%= e %>
+    <% end %>
+  </p>
+<% end %>
+
+<%= form_with(model: @journal) do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+
+  <%= f.submit %>
+<% end %>

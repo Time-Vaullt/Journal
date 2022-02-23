@@ -7,5 +7,9 @@ module Journal
       g.fixture_replacement :factory_bot
       g.factory_bot dir: 'spec/factories'
     end
+
+    initializer "journal.assets.precompile" do |app|
+      app.config.assets.precompile += %w( journal/application.css )
+    end
   end
 end

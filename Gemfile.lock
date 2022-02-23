@@ -1,8 +1,16 @@
 PATH
+  remote: ../vault_core
+  specs:
+    vault_core (0.1.0)
+      devise
+      rails (>= 7.0.2.2)
+
+PATH
   remote: .
   specs:
     journal (0.1.0)
       rails (>= 7.0.2.2)
+      vault_core
 
 GEM
   remote: https://rubygems.org/
@@ -72,9 +80,16 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    bcrypt (3.1.16)
     builder (3.2.4)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.10.0)
@@ -115,6 +130,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.1-arm64-darwin)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.3.2)
     racc (1.6.0)
     rack (2.2.3)
@@ -147,6 +163,9 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
     rspec-expectations (3.11.0)
@@ -176,6 +195,8 @@ GEM
     timeout (0.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -190,6 +211,7 @@ DEPENDENCIES
   pg
   rspec-rails
   sprockets-rails
+  vault_core!
 
 BUNDLED WITH
    2.2.30
