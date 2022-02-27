@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Journal</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag    "journal/application", media: "all" %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-</html>
+<%= render 'layouts/vault_core/application_layout', title: { label: 'Journal', url: '/journals'}, left_side_link: { label: 'New Journal', url: new_journal_path } do %>
+ <%= yield %>
+<% end %>

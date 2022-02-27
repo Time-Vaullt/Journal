@@ -1,10 +1,12 @@
 class CreateJournalJournals < ActiveRecord::Migration[7.0]
   def change
     create_table :journals do |t|
-      t.text :content, null: false
+      t.string :title, null: false
       t.date :date, null: false
 
       t.timestamps
     end
+
+    add_reference :journals, :user, null: false, foreign_key: true
   end
 end

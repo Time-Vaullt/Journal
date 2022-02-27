@@ -1,4 +1,4 @@
 module Journal
-  class ApplicationController < ActionController::Base
+  class ApplicationController < VaultCore::ApplicationController
   end
 end

@@ -4,7 +4,9 @@ module Journal
     before_action :find_journal, only: %i[show edit update destroy]
 
     def index
-      @journals = user_journals
+      @journal = user_journals.new
+      @journals = user_journals.order(created_at: :desc)
+      @pagy, @journals = pagy_countless(@journals)
     end
 
     def show; end
@@ -39,7 +41,7 @@ module Journal
     private
 
     def journal_params
-      params.require(:journal).permit(:content, :date)
+      params.require(:journal).permit(:title, :content, :date)
     end
 
     def user_journals

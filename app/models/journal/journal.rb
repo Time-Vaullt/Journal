@@ -4,6 +4,8 @@ module Journal
 
     belongs_to :user, class_name: 'VaultCore::User'
 
-    validates :content, :date, presence: true
+    has_rich_text :content
+
+    validates :title, :content, :date, presence: true
   end
 end
